@@ -13,6 +13,24 @@ class textblocking_test(unittest.TestCase):
             invert_text(['ABC'])
         )
 
+    def test_long_string(self):
+        self.assertEqual(
+            ['A',
+             'A',
+             'A',
+             'A',
+             'A',
+             'A',
+             'A',
+             'A',
+             'A',
+             'A',
+             'A',
+             'A',
+             'A'],
+            invert_text(['AAAAAAAAAAAAA'])
+        )
+
     def test_multipe_lines(self):
         self.assertEqual(
             ['AHO',
@@ -24,6 +42,12 @@ class textblocking_test(unittest.TestCase):
              'GNU'
             ],
             invert_text(['ABCDEFG', 'HIJKLMN', 'OPQRSTU'])
+        )
+
+    def test_vertical_to_horizontal(self):
+        self.assertEqual(
+            ['AAAAA'],
+            invert_text(['A', 'A', 'A', 'A', 'A'])
         )
 
     ## Test strict version
