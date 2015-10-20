@@ -24,7 +24,16 @@ class race_average_test(unittest.TestCase):
             ra.avgMinutes(['08:01 AM, DAY 1'])
         )
 
-    def test_many_boats(self):
+    def test_many_boats_1(self):
+        self.assertEqual(
+            27239,
+            ra.avgMinutes(
+                ['02:00 PM, DAY 19',
+                 '02:00 PM, DAY 20',
+                 '01:58 PM, DAY 20'])
+        )
+
+    def test_many_boats_2(self):
         self.assertEqual(
             1472,                     # Rounding up 1471.66~
             ra.avgMinutes(
